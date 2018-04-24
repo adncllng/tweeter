@@ -1,4 +1,3 @@
-// Test / driver code (temporary). Eventually will get this from the server.
 const data = [
   {
     "user": {
@@ -57,10 +56,10 @@ $(document).ready(function(){
 
     $header.append(`<img src="${tweetObject.user.avatars.small}">`);
     $header.append(`<h2>${tweetObject.user.name}</h2>`);
-    $header.append(`<h3>${tweetObject.user.handle}</h3>`)
-    $content.append(`<p>${tweetObject.content.text}</p>`)
-    $footer.append(`<span>${tweetObject.created_at}</span>`)
-    $footer.append('<span class="icons"><i class="fas fa-flag"></i><i class="fas fa-recycle"></i><i class="fas fa-heart"></i></span>')
+    $header.append(`<h3>${tweetObject.user.handle}</h3>`);
+    $content.append(`<p>${tweetObject.content.text}</p>`);
+    $footer.append(`<span>${tweetObject.created_at}</span>`);
+    $footer.append('<span class="icons"><i class="fas fa-flag"></i><i class="fas fa-recycle"></i><i class="fas fa-heart"></i></span>');
 
     $tweet.append($header);
     $tweet.append($content);
@@ -69,20 +68,12 @@ $(document).ready(function(){
     return $tweet;
   }
 
-//var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-//console.log($tweet); // to see what it looks like
-// $('#tweet-container').append($tweet);
-
-
 function renderTweets(tweets) {
   tweets.forEach(tweet => {
     $('#tweet-container').append(createTweetElement(tweet));
   })
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
 }
+
 renderTweets(data)
 
 })
