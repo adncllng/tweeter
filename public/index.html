@@ -11,16 +11,29 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-        <!--  New Tweet CSS -->
+    <!--  New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!--  Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <!--     font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Composer Character Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
+
+
+
+
+
+
+
 
 
 
@@ -33,12 +46,29 @@
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">
+       <!-- new tweet form -->
       <section class="new-tweet">        <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">0</span>
         </form>
+      </section>
+      <!-- tweets go in here -->
+      <section id="tweets">
+        <article class="clearfix tweet">
+          <header class="clearfix">
+            <img src= "/images/bird.png"> <h2>Name Name</h2> <h3>@namey</h3>
+          </header>
+          <div class="content">
+            <p>asdfadsfasdf</p>
+          </div>
+
+          <footer>
+            <span class= "ago">asdfadsf</span>
+            <span class="icons"><i class="fas fa-flag"></i><i class="fas fa-recycle"></i><i class="fas fa-heart"></i></span>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
