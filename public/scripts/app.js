@@ -22,12 +22,12 @@ $(document).ready(function(){
         url: `/tweets`,
         method: 'POST',
         data:$( this ).serialize(),
-        success: function (stuff) {
-           loadTweets();
+        success: function (tweet) {
+           $('#tweet-container').prepend(createTweetElement(tweet));
         }
       });
       }else {
-        $(".new-tweet span").text("Too Many Characters!")
+        $(".new-tweet span").text("Too Many Characters!");
       }
 
   });
