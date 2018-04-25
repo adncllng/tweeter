@@ -39,14 +39,11 @@ $(document).ready(function(){
     let $content = $("<div>").addClass("content");
     let $footer = $("<footer>");
 
-
-
-    $header.append(`<img src="${tweetObject.user.avatars.small}">`);
-    $header.append(`<h2>${tweetObject.user.name}</h2>`);
-    $header.append(`<h3>${tweetObject.user.handle}</h3>`);
-    $content.append(`<p>${tweetObject.content.text}</p>`);
-    $footer.append(`<span>${tweetObject.created_at}</span>`);
-
+    $header.append($("<img>").attr('src',tweetObject.user.avatars.small));
+    $header.append($("<h2>").text(tweetObject.user.name));
+    $header.append($("<h3>").text(tweetObject.user.handle));
+    $content.append($("<p>").text(tweetObject.content.text));
+    $footer.append($("<span>").text(tweetObject.created_at));
     $footer.append('<span class="icons"><i class="fas fa-flag"></i><i class="fas fa-recycle"></i><i class="fas fa-heart"></i></span>');
 
     $tweet.append($header);
