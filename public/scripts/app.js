@@ -6,23 +6,30 @@ $(document).ready(function(){
       method:'GET',
       success: function(tweets) {
         renderTweets(tweets);
-        console.log('success: ', tweets);
       }
     });
   }
 
   loadTweets();
 
-$( ".new-tweet form" ).on( "submit", function( event ) {
-  event.preventDefault();
-    $.ajax({
-      url: `/tweets`,
-      method: 'POST',
-      data:$( this ).serialize(),
-      success: function (stuff) {
-      loadTweets();
+  $( ".new-tweet form" ).on( "submit", function( event ) {
+    event.preventDefault();
+    let length = $(this).find('textarea').val().length;
+    if(length === 0){
+       $(".new-tweet span").text("Can't post empty tweet!").css("color","red");
+    } else if ($(this).text() <= 140){
+      $.ajax({
+        url: `/tweets`,
+        method: 'POST',
+        data:$( this ).serialize(),
+        success: function (stuff) {
+           loadTweets();
+        }
+      });
+      }else {
+        $(".new-tweet span").text("Too Many Characters!")
       }
-    });
+
   });
 
   function createTweetElement (tweetObject) {
