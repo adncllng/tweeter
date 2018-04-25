@@ -47,6 +47,44 @@ const data = [
 
 $(document).ready(function(){
 
+
+$( ".new-tweet form" ).on( "submit", function( event ) {
+  event.preventDefault();
+    $.ajax({
+      url: `/tweets`,
+      method: 'POST',
+      data:$( this ).serialize(),
+      success: function (morePostsHtml) {
+      console.log('Success: ', morePostsHtml);
+      }
+    });
+  });
+
+
+// $('.new-tweet input').on('click', function(event){
+//   event.preventDefault();
+//   $.ajax({
+//     $.ajax({
+//       url: '',
+//       method: 'POST',
+//       success: function (morePostsHtml) {
+//       console.log('Success: ', morePostsHtml);
+//       $button.replaceWith(morePostsHtml);
+//       }
+//     });
+//   })
+
+// })
+
+
+
+
+
+
+
+
+
+
   function createTweetElement (tweetObject) {
 
     let $tweet = $("<article>").addClass('tweet');
