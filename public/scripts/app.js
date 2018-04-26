@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   function loadTweets() {
     $.ajax({
       url:'/tweets',
@@ -47,7 +46,8 @@ $(document).ready(function(){
     $header.append($("<h2>").text(tweetObject.user.name));
     $header.append($("<h3>").text(tweetObject.user.handle));
     $content.append($("<p>").text(tweetObject.content.text));
-    $footer.append($("<span>").text(tweetObject.created_at));
+    $footer.append($("<span>").text(moment.unix(tweetObject.created_at/1000).fromNow()));
+    console.log(moment(tweetObject.created_at))
     $footer.append('<span class="icons"> <i class="fas fa-flag"> </i> <i class="fas fa-recycle"> </i> <i class="fas fa-heart"> </i> </span>');
 
     $tweet.append($header);
