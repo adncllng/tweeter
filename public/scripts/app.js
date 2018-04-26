@@ -15,7 +15,7 @@ $(document).ready(function(){
     event.preventDefault();
     let length = $(this).find('textarea').val().length;
     if(length === 0){
-       $(".new-tweet span").text("Can't post empty tweet!").css("color","red");
+        $(".new-tweet span").text("Can't post empty tweet!").css("color","red");
 
     } else if ($(this).text() <= 140){
       $.ajax({
@@ -47,7 +47,6 @@ $(document).ready(function(){
     $header.append($("<h3>").text(tweetObject.user.handle));
     $content.append($("<p>").text(tweetObject.content.text));
     $footer.append($("<span>").text(moment.unix(tweetObject.created_at/1000).fromNow()));
-    console.log(moment(tweetObject.created_at))
     $footer.append('<span class="icons"> <i class="fas fa-flag"> </i> <i class="fas fa-recycle"> </i> <i class="fas fa-heart"> </i> </span>');
 
     $tweet.append($header);

@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(".new-tweet textarea").on('keyup', function(){
     let chars = $(this).val().length;
     const counter = $(this).siblings(".counter");
-    counter.text(chars);
+    counter.text(140 - chars);
     counter.css('color', chars > 140 ? 'red' : 'black');
   });
 });
