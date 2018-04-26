@@ -48,7 +48,7 @@ $(document).ready(function(){
     $header.append($("<h3>").text(tweetObject.user.handle));
     $content.append($("<p>").text(tweetObject.content.text));
     $footer.append($("<span>").text(tweetObject.created_at));
-    $footer.append('<span class="icons"><i class="fas fa-flag"></i><i class="fas fa-recycle"></i><i class="fas fa-heart"></i></span>');
+    $footer.append('<span class="icons"> <i class="fas fa-flag"> </i> <i class="fas fa-recycle"> </i> <i class="fas fa-heart"> </i> </span>');
 
     $tweet.append($header);
     $tweet.append($content);
