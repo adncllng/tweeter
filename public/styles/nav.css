@@ -22,3 +22,18 @@
   height:80px;
   line-height: 80px;
 }
+
+#compose {
+  color:#07a389;
+  background-color: #e8fdff;
+  float:right;
+  margin:10px;
+  height: 60px;
+  border-radius: 5px;
+  border:solid 1px black;
+}
+#compose:hover {
+ color:black;
+ background-color: white;
+}
+#compose:focus {outline:0;}

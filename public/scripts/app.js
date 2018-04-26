@@ -17,13 +17,17 @@ $(document).ready(function(){
     let length = $(this).find('textarea').val().length;
     if(length === 0){
        $(".new-tweet span").text("Can't post empty tweet!").css("color","red");
+
     } else if ($(this).text() <= 140){
       $.ajax({
         url: `/tweets`,
         method: 'POST',
-        data:$( this ).serialize(),
+        data:$(this).serialize(),
         success: function (tweet) {
            $('#tweet-container').prepend(createTweetElement(tweet));
+           $(".new-tweet textarea").val('');
+           $(".new-tweet .counter").text(0)
+           $(".new-tweet").slideToggle();
         }
       });
       }else {
@@ -61,6 +65,10 @@ function renderTweets(tweets) {
 
 }
 
+
+$("#compose").on('click', function(event){
+  $(".new-tweet").slideToggle();
+})
 
 
 
