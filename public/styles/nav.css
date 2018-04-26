@@ -6,34 +6,36 @@
   background-color: #00a087;
   color: #e8fdff;
   padding: 0 2em;
-   height:80px;
-   z-index: 1;
+  height: 80px;
+  z-index: 1;
 }
 
 #nav-bar .logo {
   width: 80px;
   height: 80px;
-  float:left;
+  float: left;
 }
 
 #nav-bar .header {
-  float:left;
-  font-size:2em;
-  height:80px;
+  float: left;
+  font-size: 2em;
+  height: 80px;
   line-height: 80px;
 }
 
 #compose {
-  color:#07a389;
+  color: #07a389;
   background-color: #e8fdff;
-  float:right;
-  margin:10px;
+  float: right;
+  margin: 10px;
   height: 60px;
   border-radius: 5px;
-  border:solid 1px black;
+  border: solid 1px black;
 }
 #compose:hover {
- color:black;
- background-color: white;
+  color: black;
+  background-color: white;
 }
-#compose:focus {outline:0;}
+#compose:focus {
+  outline: 0;
+}
