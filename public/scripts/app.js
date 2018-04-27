@@ -20,7 +20,7 @@ $(document).ready(function() {
       $(".new-tweet span")
         .text("Can't post empty tweet!")
         .css("color", "red");
-    } else if ($(this).text() <= 140) {
+    } else if (length <= 140) {
       $.ajax({
         url: `/tweets`,
         method: "POST",
@@ -28,7 +28,7 @@ $(document).ready(function() {
         success: function(tweet) {
           $("#tweet-container").prepend(createTweetElement(tweet));
           $(".new-tweet textarea").val("");
-          $(".new-tweet .counter").text(0);
+          $(".new-tweet .counter").text(140).css("color", "black");
           $(".new-tweet").slideToggle();
         }
       });
